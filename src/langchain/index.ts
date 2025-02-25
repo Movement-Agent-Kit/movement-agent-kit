@@ -29,6 +29,9 @@ import {
 	MovementAlloraGetInferenceByTopicId,
 	MovementAlloraGetPriceInference,
 } from "./allora"
+
+// import { CoingeckoGetLatestPoolsTool } from "./coingecko"
+import { ElfaPingTool, ElfaApiKeyStatusTool, ElfaGetMentionsTool, ElfaGetTopMentionsTool,ElfaSearchMentionsTool, ElfaAccountSmartStatsTool, ElfaTrendingTokensTool } from "./elfa_ai"
 import { OpenAICreateImageTool } from "./openai"
 
 export const createMovementTools = (agent: AgentRuntime, config: { filter?: ToolsNameList[] } = {}) => {
@@ -67,6 +70,15 @@ export const createMovementTools = (agent: AgentRuntime, config: { filter?: Tool
 		// new EchelonWithdrawTokenTool(agent),
 		// new EchelonRepayTokenTool(agent),
 		// new EchelonBorrowTokenTool(agent),
+
+		// Elfa.AI tools
+		new ElfaPingTool(agent),
+		new ElfaApiKeyStatusTool(agent),
+		new ElfaGetMentionsTool(agent),
+		new ElfaGetTopMentionsTool(agent),
+		new ElfaSearchMentionsTool(agent),
+		new ElfaAccountSmartStatsTool(agent),
+		new ElfaTrendingTokensTool(agent),
 	]
 
 	return config.filter ? tools.filter((tool) => config?.filter?.includes(tool.name as ToolsNameList)) : tools
@@ -77,3 +89,5 @@ export * from "./movement"
 export * from "./echelon"
 export * from "./liquidswap"
 export * from "./openai"
+export * from "./allora"
+export * from "./elfa_ai"
