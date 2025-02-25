@@ -4,7 +4,7 @@
 
 An open-source toolkit for connecting AI agents to Movement protocols.
 
-![Movement Agent Kit](./movement-agent-kit.jpeg "Movement Agent Kit")
+![Movement Agent Kit](./movement-agent-kit.png "Movement Agent Kit")
 
 </div>
 
