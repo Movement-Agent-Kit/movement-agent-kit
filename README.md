@@ -126,7 +126,7 @@ First, import the necessary modules:
 
 ```typescript
 const config = new AptosConfig({ 
-	network,
+	network: Network.CUSTOM,
 	fullnode: MOVEMENT_NETWORK_CONFIG[DEFAULT_NETWORK].fullnode
 })
 
